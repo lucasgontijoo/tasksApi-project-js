@@ -2,6 +2,7 @@ import http from 'node:http'
 import { jsonHandler } from './middlewares/jsonHandler.js'
 
 const server = http.createServer(async (req, res) => {
+    const { method, url } = req
     await jsonHandler(req, res)
     console.log(req.body)
 })
