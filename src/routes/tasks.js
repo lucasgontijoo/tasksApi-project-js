@@ -1,10 +1,10 @@
+import { createTask } from "../controllers/tasks/createTask.js"
+
 export const tasks = [
     {
         method: "POST",
         path: "/tasks",
-        controller: (req, res) => {
-            res.end("Task criada.")
-        }
+        controller: createTask
     },
     {
         method: "GET",
