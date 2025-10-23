@@ -1,5 +1,7 @@
 import { createTask } from "../controllers/tasks/createTask.js"
 
+// Nesse arquivo são listadas as rotas de tasks da minha api e o controller de cada rota está modularizado
+
 export const tasks = [
     {
         method: "POST",

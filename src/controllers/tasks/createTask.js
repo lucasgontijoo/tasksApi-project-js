@@ -1,3 +1,10 @@
 export function createTask({ req, res }) {
-    return res.end("Task criada.")
+    const { title, description } = req.body
+
+    const task = {
+        title,
+        description,
+    }
+
+    return res.end(JSON.stringify(task))
 }
