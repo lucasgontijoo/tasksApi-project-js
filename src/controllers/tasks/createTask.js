@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto"
 
-export function createTask({ req, res }) {
+export function createTask({ req, res, database }) {
     const { title, description } = req.body
 
     const task = {
@@ -12,5 +12,7 @@ export function createTask({ req, res }) {
         updated_at: new Date(),
     }
 
-    return res.end(JSON.stringify(task))
+    database.insert("tasks", task)
+
+    return res.writeHead(201).end(JSON.stringify(task))
 }
